@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Morrow waiter order workspace for tables, menu items, and kitchen handoffs.">
+  <title>Order Workspace | Morrow CMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="workspace-page">
+  <div class="workspace-shell">
+    <aside class="workspace-sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark">M</span><span>Morrow<span class="brand-muted">CMS</span></span></a>
+      <div class="sidebar-role"><span class="avatar">MS</span><span><strong>Maria Shah</strong><small>Waiter</small></span><span class="presence-dot"></span></div>
+      <nav class="workspace-nav" aria-label="Workspace navigation">
+        <a class="workspace-nav-item active" href="dashboard.html"><span class="nav-icon">+</span> Take an order</a>
+        <a class="workspace-nav-item muted-nav" href="#"><span class="nav-icon">[]</span> My tables</a>
+        <a class="workspace-nav-item muted-nav" href="#"><span class="nav-icon">~</span> Shift notes</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="shift-card"><span class="small-label">Current shift</span><strong>12:00 - 20:00</strong><span><span class="mini-dot green"></span> On floor</span></div>
+        <a class="signout-link" id="signout-link" href="index.html">Sign out <span aria-hidden="true">-&gt;</span></a>
+      </div>
+    </aside>
+    <main class="workspace-main">
+      <header class="workspace-header">
+        <div><p class="eyebrow">Waiter workspace / Tuesday, September 30, 2026</p><h1>Good afternoon, Maria.</h1></div>
+        <div class="header-actions"><span class="live-label"><span class="status-dot"></span> Service is live</span><button class="icon-button" type="button" aria-label="Notifications">!</button></div>
+      </header>
+      <div class="workspace-content">
+        <section class="table-section" aria-labelledby="floor-title">
+          <div class="content-heading"><div><p class="eyebrow">Your floor</p><h2 id="floor-title">Choose a table</h2></div><span class="muted-text">4 of 12 active</span></div>
+          <div class="workspace-tables">
+            <button class="floor-table occupied" data-table="T01"><span>T01</span><small>2 guests</small><em>In service</em></button>
+            <button class="floor-table selected" data-table="T02"><span>T02</span><small>New table</small><em>Ready</em></button>
+            <button class="floor-table occupied" data-table="T03"><span>T03</span><small>4 guests</small><em>In service</em></button>
+            <button class="floor-table" data-table="T04"><span>T04</span><small>New table</small><em>Ready</em></button>
+          </div>
+        </section>
+        <section class="order-section" aria-labelledby="order-title">
+          <div class="content-heading"><div><p class="eyebrow">New order <span class="order-table-label">/ T02</span></p><h2 id="order-title">Build the order</h2></div><span class="order-status"><span class="mini-dot green"></span> Draft</span></div>
+          <div class="order-context">
+            <div class="context-field"><span class="context-label">Order type</span><strong>Dine in</strong><small>Table service</small></div>
+            <label class="context-field" for="guest-count"><span class="context-label">Guests</span><select id="guest-count"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select><small>Update as the party arrives</small></label>
+            <div class="context-field context-security"><span class="mini-dot green"></span><span><strong>Minimal guest data</strong><small>No personal details required</small></span></div>
+          </div>
+          <div class="order-builder">
+            <div class="menu-panel">
+              <div class="menu-tools">
+                <div class="search-box"><span aria-hidden="true">/</span><input id="menu-search" type="search" placeholder="Search menu" aria-label="Search menu"></div>
+                <div class="category-tabs" role="tablist" aria-label="Menu categories"><button class="category-tab active" data-category="All" role="tab">All</button><button class="category-tab" data-category="Coffee" role="tab">Coffee</button><button class="category-tab" data-category="Food" role="tab">Food</button><button class="category-tab" data-category="Cold" role="tab">Cold</button></div>
+              </div>
+              <div class="menu-list" id="menu-list">
+                <button class="menu-item" data-category="Coffee" data-name="Flat White" data-price="4.50"><span class="menu-item-mark coffee-mark">FW</span><span class="menu-item-text"><strong>Flat White</strong><small>Double espresso, steamed milk</small></span><span class="menu-price">$4.50</span></button>
+                <button class="menu-item" data-category="Coffee" data-name="Citrus Cold Brew" data-price="5.00"><span class="menu-item-mark cold-mark">CB</span><span class="menu-item-text"><strong>Citrus Cold Brew</strong><small>Cold brew, orange, tonic</small></span><span class="menu-price">$5.00</span></button>
+                <button class="menu-item" data-category="Food" data-name="Rosemary Toastie" data-price="8.50"><span class="menu-item-mark food-mark">RT</span><span class="menu-item-text"><strong>Rosemary Toastie</strong><small>Sourdough, cheddar, herbs</small></span><span class="menu-price">$8.50</span></button>
+                <button class="menu-item" data-category="Food" data-name="Market Grain Bowl" data-price="11.00"><span class="menu-item-mark food-mark">GB</span><span class="menu-item-text"><strong>Market Grain Bowl</strong><small>Roasted vegetables, tahini</small></span><span class="menu-price">$11.00</span></button>
+                <button class="menu-item" data-category="Cold" data-name="House Lemonade" data-price="3.50"><span class="menu-item-mark cold-mark">HL</span><span class="menu-item-text"><strong>House Lemonade</strong><small>Lemon, mint, sparkling water</small></span><span class="menu-price">$3.50</span></button>
+                <button class="menu-item unavailable" data-category="Food" data-name="Seasonal Tart" data-price="6.00" disabled><span class="menu-item-mark food-mark">ST</span><span class="menu-item-text"><strong>Seasonal Tart</strong><small>Temporarily unavailable</small></span><span class="menu-price">Sold out</span></button>
+              </div>
+              <div class="menu-empty" id="menu-empty" hidden><strong>No menu items found</strong><span>Try another search or category.</span></div>
+            </div>
+            <aside class="order-panel" aria-label="Current order">
+              <div class="order-panel-heading"><span>Your order</span><span class="item-count" id="item-count">0 items</span></div>
+              <div class="order-items" id="order-items"><div class="empty-order"><span class="empty-icon">+</span><strong>Your order is empty</strong><span>Add an item from the menu to get started.</span></div></div>
+              <div class="order-note"><div class="note-heading"><label for="order-note">Kitchen note</label><span id="note-count">0 / 120</span></div><textarea id="order-note" maxlength="120" placeholder="Allergies or preparation details"></textarea></div>
+              <div class="order-summary"><div><span>Subtotal</span><strong id="subtotal">$0.00</strong></div><div><span>Service charge <small>5%</small></span><strong id="service-charge">$0.00</strong></div><div class="total-row"><span>Total</span><strong id="order-total">$0.00</strong></div><div class="order-actions"><button class="button button-secondary" id="clear-order" type="button" disabled>Clear</button><button class="button button-primary" id="send-order" type="button" disabled>Send to kitchen <span aria-hidden="true">-&gt;</span></button></div><button class="save-draft" id="save-draft" type="button" disabled>Save draft for later</button><p class="order-helper">Review the order before sending. Kitchen notes are shared with authorized staff.</p></div>
+            </aside>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="confirm-backdrop" id="confirm-modal" hidden>
+    <div class="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+      <span class="confirm-mark">!</span>
+      <h2 id="confirm-title">Send this order to the kitchen?</h2>
+      <p id="confirm-copy">The kitchen will start preparing the items for this table.</p>
+      <div class="confirm-actions"><button class="button button-secondary" id="cancel-send" type="button">Review order</button><button class="button button-primary" id="confirm-send" type="button">Confirm handoff <span aria-hidden="true">-&gt;</span></button></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

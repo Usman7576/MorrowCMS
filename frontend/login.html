@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in to the Morrow Cafe Management System staff workspace.">
+  <title>Sign in | Morrow CMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://accounts.google.com/gsi/client" defer></script>
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <section class="auth-aside"><a class="brand" href="index.html"><span class="brand-mark">M</span><span>Morrow<span class="brand-muted">CMS</span></span></a><div class="aside-message"><p class="eyebrow"><span class="status-dot"></span> Staff workspace</p><h1>Keep the room moving.</h1><p>Sign in to take orders, check tables, and keep every handoff visible.</p></div><div class="aside-note"><span class="mini-dot green"></span><span>Private workspace for authorized staff</span></div></section>
+    <section class="auth-panel"><a class="back-link" href="index.html"><span aria-hidden="true">&lt;-</span> Back to overview</a><nav class="auth-progress" aria-label="Sign-in progress"><span class="complete">01 Overview</span><span class="active">02 Staff sign in</span><span>03 Order workspace</span></nav><div class="auth-form-wrap"><div class="form-heading"><p class="eyebrow">Welcome back</p><h2>Sign in to Morrow</h2><p>Use your staff account to continue to the floor.</p></div><form id="login-form" novalidate><div class="field-group"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="username" placeholder="you@cafe.com" required><span class="field-error" id="email-error"></span></div><div class="field-group"><div class="label-row"><label for="password">Password</label><a href="#" class="small-link" id="forgot-link">Forgot password?</a></div><div class="password-wrap"><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="6" required><button type="button" class="password-toggle" id="password-toggle" aria-label="Show password">Show</button></div><span class="field-error" id="password-error"></span></div><div class="role-note"><span class="role-icon">W</span><div><strong>Signing in as Waiter</strong><span>Your workspace is limited to service and order tools.</span></div></div><button class="button button-primary button-full" type="submit">Continue to workspace <span aria-hidden="true">-&gt;</span></button><div class="auth-divider"><span>or continue with</span></div><div id="google-signin" class="google-signin"></div><p class="form-status" id="login-status" role="status" aria-live="polite"></p><p class="form-status" id="google-status" role="status" aria-live="polite"></p></form><p class="auth-footnote">Google sign-in uses Google's identity service. Your password is never shared with this application.</p></div></section>
+  </main>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
